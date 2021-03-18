@@ -1,13 +1,25 @@
+import React, {useState} from 'react'
 import './App.css';
-import {useSelector} from 'react-redux'
+import Modal from './components/modal'
 
 function App() {
-  const counter = useSelector(state => state.counter)
+  const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="App">
-      <h1>Counter: {counter}</h1>
-    </div>
+    <>
+      {showModal && (
+        <Modal content="hello world"
+          onCloseButtonClick={() => setShowModal(false)}
+        />
+      )}
+      <div className="App">
+        <header className="App-header">
+          <button onClick={() => {setShowModal(true);}}>
+            Show Modal
+          </button>
+        </header>
+      </div>
+    </>
   );
 }
 
