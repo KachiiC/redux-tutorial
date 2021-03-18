@@ -11,10 +11,3 @@ const counterReducer = (state = 0, action) => {
 }
 
 export default counterReducer
-
-// let store = createStore(counter);
-
-// // Display it in console
-// store.subscribe(() => console.log(store.getState()));
-// // DISPATCH
-// store.dispatch(increment());
